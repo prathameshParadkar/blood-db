@@ -1,0 +1,24 @@
+:root {
+    --primary: #45A29E;
+}
+
+.btn {
+    box-sizing: border-box;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 30px;
+}
+
+.btn--red {
+    background: #DE2C2C;
+    border: 1px solid #DE2C2C;
+    color: #FFFFFF;
+    
+}
+.btn--white {
+    background: #FFFFFF;
+    border: 1px solid black;
+    color: black;
+}
+

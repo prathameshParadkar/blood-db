@@ -2,37 +2,158 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  position: absolute;
+  width: 245px;
+  height: 81px;
+  left: 342px;
+  top: 120px;
+}
+.person-box {
+  box-sizing: border-box;
+  position: absolute;
+  width: 187px;
+  height: 201px;
+  left: 270px;
+  top: 218px;
+  background: #DE2C2C;
+  border: 1px solid #DE2C2C;
+  border-radius: 20px;
+}
+.person-box>p, .organisation-box>p{
+  color: #FFFFFF;
+  font-size: 30px;
+}
+.organisation-box {
+  box-sizing: border-box;
+  position: absolute;
+  width: 187px;
+  height: 201px;
+  left: 486px;
+  top: 218px;
+  background: #DE2C2C;
+  border: 1px solid #DE2C2C;
+  border-radius: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-email {
+  position: absolute;
+  width: 370px;
+  height: 30px;
+  left: 280px;
+  top: 464px;
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  color: #DE2C2C;
+  border: none;
+  border-bottom: 1px solid #DE2C2C;
+}
+.login-password {
+  position: absolute;
+  width: 370px;
+  height: 30px;
+  left: 280px;
+  top: 535px;
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #DE2C2C;
+}
+.fa-building, .fa-user {
+  color: black;
+  font-size: 60px;
+  margin-top: 20px;
+}
+button.login {
+  box-sizing: border-box;
+  position: absolute;
+  width: 142px;
+  height: 40px;
+  left: 401px;
+  top: 610px;
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  background: #FFFFFF;
+  border: 1px solid #DE2C2C;
+  color: #DE2C2C;
+}
+button.login:hover{
+  color: black;
+  border: 1px solid black;
+  background: #DE2C2C;
+}
+.login-form>a{
+  position: absolute;
+  width: 300px;
+  height: 40px;
+  left: 380px;
+  top: 660px;
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #DA9B9B;
+}
+.login-info {
+  position: absolute;
+  width: 647px;
+  height: 100%;
+  left: 889px;
+  top: 0px;
+  background: #DE2C2C;
+  font-family: 'Prompt';
+  font-style: normal;
+}
+h1.title {
+  position: absolute;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 76px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  left: 135px;
+  top: 30%;
 }
 
-.App-link {
-  color: #61dafb;
+.login-info > ul{
+  position: absolute;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 38px;
+  margin: 10px 10px;
+  left: 80px;
+  align-items: center;
+  text-align: left;
+  color: #FFFFFF;
+  top: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+hr.line {
+  position: absolute;
+  width: 40%;
+  top: 45%;
+  left: 33%;
+  display: block;
+  border: 3px solid #FFFFFF;
 }
