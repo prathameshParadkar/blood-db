@@ -18,7 +18,23 @@
 }
 .btn--white {
     background: #FFFFFF;
-    border: 1px solid black;
-    color: black;
+    border: 1px solid #DE2C2C;
+    color: #DE2C2C;
 }
-
+.person {
+    box-sizing: border-box;
+    position: absolute;
+    width: 187px;
+    height: 201px;
+    left: 270px;
+    top: 218px;
+    border-radius: 20px;
+}
+.organisation {
+    box-sizing: border-box;
+  position: absolute;
+  width: 187px;
+  height: 201px;
+  left: 486px;
+  top: 218px;
+}

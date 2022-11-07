@@ -10,14 +10,28 @@ function Login() {
     <>
       <div className="login-form">
         <img src={logo} alt="Blood-db" className="logo"/>
-        <button className="person-box" onClick={e => {setLoginType("Person")}}>
+        {/* <button className="person-box" onClick={e => {setLoginType("Person")}}>
           <i class="fa-regular fa-user"></i>
           <p>Person Login</p>
-        </button>
-        <button className="organisation-box" onClick={e => {setLoginType("Organisation")}}>
-          <i class="fa-regular fa-building"></i>
+        </button> */}
+        {loginType === "Person" ? 
+        <Button buttonColour="btn--red" onClick={e => {setLoginType("Person")}} buttonType="person">
+          <i class="fa-regular fa-user"></i>
+          <p>Person Login</p>
+        </Button> :
+         <Button buttonColour="btn--white" onClick={e => {setLoginType("Person")}} buttonType="person">
+         <i class="fa-regular fa-user"></i>
+         <p>Person Login</p>
+       </Button>}
+       {loginType === "Organisation" ? 
+        <Button buttonColour="btn--red" onClick={e => {setLoginType("Organisation")}} buttonType="organisation">
+        <i class="fa-regular fa-building"></i>
           <p>Organisation Login</p>
-        </button>
+        </Button> :
+        <Button buttonColour="btn--white" onClick={e => {setLoginType("Organisation")}} buttonType="organisation">
+        <i class="fa-regular fa-building"></i>
+          <p>Organisation Login</p>
+        </Button>}
         <div className="login">
           <input
             type="text"
@@ -61,6 +75,7 @@ function Login() {
         <li>Receive Blood by requesting from donors and blood banks.</li>
         </ul>
     </div>}
+    <h5>&#169;team_semicolon</h5>
     </>
   );
 }

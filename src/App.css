@@ -9,33 +9,6 @@
   left: 342px;
   top: 120px;
 }
-.person-box {
-  box-sizing: border-box;
-  position: absolute;
-  width: 187px;
-  height: 201px;
-  left: 270px;
-  top: 218px;
-  background: #DE2C2C;
-  border: 1px solid #DE2C2C;
-  border-radius: 20px;
-}
-.person-box>p, .organisation-box>p{
-  color: #FFFFFF;
-  font-size: 30px;
-}
-.organisation-box {
-  box-sizing: border-box;
-  position: absolute;
-  width: 187px;
-  height: 201px;
-  left: 486px;
-  top: 218px;
-  background: #DE2C2C;
-  border: 1px solid #DE2C2C;
-  border-radius: 20px;
-}
-
 .login-email {
   position: absolute;
   width: 370px;
@@ -148,7 +121,6 @@ h1.title {
   color: #FFFFFF;
   top: 50%;
 }
-
 hr.line {
   position: absolute;
   width: 40%;
@@ -156,4 +128,19 @@ hr.line {
   left: 33%;
   display: block;
   border: 3px solid #FFFFFF;
+}
+h5 {
+  position: absolute;
+width: 235px;
+left: 400px;
+top: 709px;
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #D1D1D1;
 }
