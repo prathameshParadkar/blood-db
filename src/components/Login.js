@@ -1,11 +1,41 @@
 import React, { useState } from "react";
 import { Button } from "./Button";
 import logo from "../logo.png";
+import axios from 'axios';
+import { Navigate } from "react-router";
 
 function Login() {
-    const [email, setEmail] = useState("Email...");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("your email");
+    const [password, setPassword] = useState("Password");
     const [loginType, setLoginType] = useState("Organisation");
+    const [redirect, setRedirect] = useState('')
+
+    const login = (e) => {
+      e.preventDefault();
+      axios.post('http://localhost:5000/',
+      {
+       email,
+       password,
+       loginType 
+      })
+      .then((res) => {
+        let data = res.data;
+        if(data.isLogin){
+          // alert(data.msg);
+          setRedirect("/home")
+        }
+        else{
+          alert(data.msg);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      })
+    }
+    if(redirect){
+      return <Navigate to={{ pathname: `${redirect}` }} />
+    }
+
   return (
     <>
       <div className="login-form">
@@ -36,7 +66,7 @@ function Login() {
           <input
             type="text"
             className="login-email"
-            value={email}
+            placeholder = {email}
             onChange={(e) => {
               setEmail(e.target.value);
             }}
@@ -45,13 +75,13 @@ function Login() {
           <input
             type="password"
             className="login-password"
-            value={password}
+            placeholder = {password}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
             required
           />
-          <button className="login">Sign In</button>
+          <button className="login" onClick={login}>Sign In</button>
         </div>
         {loginType === "Person" &&  <a href="/register">Not a registered User?</a> }
         {loginType === "Organisation" &&   <a href="/register">Not a registered Organisation?</a>}
