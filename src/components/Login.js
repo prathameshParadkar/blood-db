@@ -38,6 +38,7 @@ function Login() {
 
   return (
     <>
+    
       <div className="login-form">
         <img src={logo} alt="Blood-db" className="logo"/>
         {/* <button className="person-box" onClick={e => {setLoginType("Person")}}>
@@ -83,8 +84,8 @@ function Login() {
           />
           <button className="login" onClick={login}>Sign In</button>
         </div>
-        {loginType === "Person" &&  <a href="/register">Not a registered User?</a> }
-        {loginType === "Organisation" &&   <a href="/register">Not a registered Organisation?</a>}
+        {loginType === "Person" &&  <a href="/register/person">Not a registered User?</a> }
+        {loginType === "Organisation" &&   <a href="/register/organisation">Not a registered Organisation?</a>}
       </div>
       {loginType === "Organisation" && 
         <div className="login-info">
