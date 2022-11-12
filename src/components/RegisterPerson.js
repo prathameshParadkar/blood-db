@@ -1,13 +1,63 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+import { Navigate } from 'react-router';
 import logo from "../logo.png";
 
 function Register() {
   const [fname, setFname] = useState("First Name");
   const [mname, setMname] = useState("Middle Name");
   const [lname, setLname] = useState("Last Name");
+  const [gender, setGender] = useState("Male");
   const [email, setEmail] = useState("Email");
   const [number, setNumber] = useState("Phone Number");
-  const [date, setDate] = useState();
+  const [buildNo, setBuildNo] = useState("Building no.");
+  const [streetNo, setStreetNo] = useState("Street no.");
+  const [pincode, setPincode] = useState("Pincode");
+  const [city, setCity] = useState("City");
+  const [state, setState] = useState("State");
+  const [date, setDate] = useState('December 25, 1995 23:15:00');
+  const [password, setPassword] = useState("Password");
+  const [bloodGrp, setBloodGrp] = useState("A+")
+  const [medCond, setMedCond] = useState("")
+  const [redirect, setRedirect] = useState('')
+const personRegister = (e) => {
+  e.preventDefault();
+  axios.post("http://localhost:5000/person-register", {
+    fname,
+    mname,
+    lname,
+    email,
+    number,
+    gender,
+    buildNo,
+    streetNo,
+    pincode,
+    city,
+    state,
+    date,
+    bloodGrp,
+    medCond,
+    password
+  })
+  .then(res => {
+    let data = res.data;
+    if(data.isRegistered){
+      setRedirect("/home");
+      alert("Registered successfully")
+    }
+    else{
+      alert(data.msg)
+    }
+  })
+  .catch(e => {
+    console.log(e)
+  })
+}
+if(redirect){
+  return <Navigate to={{ pathname: `${redirect}` }} />
+}
+
+// console.log(date);
 
   return (
     <div>
@@ -16,7 +66,7 @@ function Register() {
         <input
             type="text"
             className="reg-fname"
-            value={fname}
+            placeholder ={fname}
             onChange={(e) => {
               setFname(e.target.value);
             }}
@@ -25,7 +75,7 @@ function Register() {
         <input
             type="text"
             className="reg-mname"
-            value={mname}
+            placeholder ={mname}
             onChange={(e) => {
               setMname(e.target.value);
             }}
@@ -34,7 +84,7 @@ function Register() {
         <input
             type="text"
             className="reg-lname"
-            value={lname}
+            placeholder ={lname}
             onChange={(e) => {
               setLname(e.target.value);
             }}
@@ -44,49 +94,69 @@ function Register() {
         <input
             type="text"
             className="reg-email"
-            value={email}
+            placeholder ={email}
             onChange={(e) => {
               setEmail(e.target.value);
             }}
             required
         />
         <input
-            type="text"
+            type="number"
             className="reg-number"
-            value={number}
+            placeholder ={number}
             onChange={(e) => {
               setNumber(e.target.value);
             }}
             required
         />
-        <select id='select' className='gender'>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="non binary">Prefer Not to say</option>
+        <select id='select' className='gender' onChange={(e) => {setGender(e.target.value)}} defaultValue={"Male"}>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="non-binary">Prefer Not to say</option>
         </select>
         <input
             type="text"
             className="build-no"
+            placeholder = {buildNo}
+            onChange = {function(e){
+              setBuildNo(e.target.value)
+            }}
             required
         />
         <input
             type="text"
             className="street-no"
+            placeholder = {streetNo}
+            onChange = {function(e){
+              setStreetNo(e.target.value)
+            }}
             required
         />
         <input
             type="text"
             className="pincode"
+            placeholder = {pincode}
+            onChange = {function(e){
+              setPincode(e.target.value)
+            }}
             required
         />
         <input
             type="text"
             className="city"
+            placeholder = {city}
+            onChange = {function(e){
+              setCity(e.target.value)
+            }}
             required
         />
         <input
             type="text"
             className="state"
+            placeholder = {state}
+            onChange = {function(e){
+              setState(e.target.value)
+            }}
             required
         />
         <label className="date" htmlFor='date'>Date of Birth</label>
@@ -94,26 +164,32 @@ function Register() {
               onChange={(e) => {
               setDate(e.target.value);
         }} />
-        <label htmlFor="bg" className='bg'>Blood Group</label>
-        <select id='bg' className='blood-group'>
+        <label htmlFor="bg" className='bg' >Blood Group</label>
+        <select id='bg' className='blood-group' onChange={(e) => {setBloodGrp(`${e.target.value}`)}} defaultValue={"A+"}>
           <option value="A+">A+</option>
           <option value="A-">A-</option>
           <option value="B+">B+</option>
           <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
         </select>
         <label htmlFor="cond" className='cond'>If any medical conditions please specify</label>
         <input
             type="text"
             className="reg-cond"
             id='cond'
-            required
+            onChange={(e) => {setMedCond(e.target.value)}}
         />
         <input
             type="password"
             className="reg-password"
+            placeholder={password}
+            onChange = {e => {setPassword(e.target.value)}}
             required
         />
-        <button className="reg">Register</button>
+        <button className="reg" onClick={personRegister}>Register</button>
         <a href="/">Already a User?</a>
         </div>
         <div className="reg-info">
