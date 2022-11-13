@@ -42,7 +42,7 @@ const personRegister = (e) => {
   .then(res => {
     let data = res.data;
     if(data.isRegistered){
-      setRedirect("/home");
+      setRedirect("/person/home");
       alert("Registered successfully")
     }
     else{

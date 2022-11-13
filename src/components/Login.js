@@ -7,7 +7,7 @@ import { Navigate } from "react-router";
 function Login() {
     const [email, setEmail] = useState("your email");
     const [password, setPassword] = useState("Password");
-    const [loginType, setLoginType] = useState("Organisation");
+    const [loginType, setLoginType] = useState("Organization");
     const [redirect, setRedirect] = useState('')
 
     const login = (e) => {
@@ -54,14 +54,14 @@ function Login() {
          <i class="fa-regular fa-user"></i>
          <p>Person Login</p>
        </Button>}
-       {loginType === "Organisation" ? 
-        <Button buttonColour="btn--red" onClick={e => {setLoginType("Organisation")}} buttonType="organisation">
+       {loginType === "Organization" ? 
+        <Button buttonColour="btn--red" onClick={e => {setLoginType("Organization")}} buttonType="organisation">
         <i class="fa-regular fa-building"></i>
-          <p>Organisation Login</p>
+          <p>Organization Login</p>
         </Button> :
-        <Button buttonColour="btn--white" onClick={e => {setLoginType("Organisation")}} buttonType="organisation">
+        <Button buttonColour="btn--white" onClick={e => {setLoginType("Organization")}} buttonType="organisation">
         <i class="fa-regular fa-building"></i>
-          <p>Organisation Login</p>
+          <p>Organization Login</p>
         </Button>}
         <div className="login">
           <input
@@ -85,9 +85,9 @@ function Login() {
           <button className="login" onClick={login}>Sign In</button>
         </div>
         {loginType === "Person" &&  <a href="/register/person">Not a registered User?</a> }
-        {loginType === "Organisation" &&   <a href="/register/organisation">Not a registered Organisation?</a>}
+        {loginType === "Organization" &&   <a href="/register/organisation">Not a registered Organization?</a>}
       </div>
-      {loginType === "Organisation" && 
+      {loginType === "Organization" && 
         <div className="login-info">
         <h1 className="title">Organiztion Login</h1>
         <hr className="line" />

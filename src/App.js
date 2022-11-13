@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Home from "./components/Home";
 import RegisterPerson from './components/RegisterPerson';
 import RegisterOrg from './components/RegisterOrg';
+import CreateACamp from './components/CreateACamp';
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,9 @@ function App() {
           <Route 
             exact path='/register/organisation'
             element={<RegisterOrg />} />
+            <Route
+            exact path ='/organization/create-a-camp'
+            element = {<CreateACamp />} />
         </Routes>
     </div>
   );
