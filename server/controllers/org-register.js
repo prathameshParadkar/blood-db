@@ -2,17 +2,7 @@ const connection = require('../models/connection')
 
 const orgRegister = (req, res) => {
     let data = req.body;
-    let q1 = 'insert into users set ?';
- 
-        connection.query(q1, {
-            username : data.email,
-            password : data.password,
-            type : "Organization"
-        },(error, results, fields) => {
-            if(error){
-                return res.send({isRegistered : false, msg : "User already present"})
-            }
-        })
+    
 
         let postOrg = {
             person_fname : data.fname,
@@ -30,13 +20,23 @@ const orgRegister = (req, res) => {
             
         }
 
+        let q1 = 'insert into users set ?';
         let q2 = "insert into person_details set ?"
-        
         let q3 = "insert into organizers set ?";
         connection.query(q2, postOrg,(error, results, fields) => {
             if(error){
                 return res.send({isRegistered : false, msg : "Database error"})
             } 
+            connection.query(q1, {
+                username : data.email,
+                password : data.password,
+                type : "Organization",
+                person_id : results.insertId
+            },(error, results, fields) => {
+                if(error){
+                    return res.send({isRegistered : false, msg : "User already present"})
+                }
+            })
             let postOrg2 = {
                 organizer_name : data.orgName,
                 organizer_website : data.website,
@@ -53,6 +53,8 @@ const orgRegister = (req, res) => {
 
              
         })
+ 
+        
         
         
         

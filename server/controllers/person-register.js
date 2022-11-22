@@ -3,17 +3,7 @@ const connection = require('../models/connection')
 
 const personRegister = (req, res) => {
     let data = req.body
-        let q1 = 'insert into users set?';
- 
-        connection.query(q1, {
-            username : data.email,
-            password : data.password,
-            type : "Person"
-        },(error, results, fields) => {
-            if(error){
-                return res.send({isRegistered : false, msg : "User already present"})
-            }
-        })
+        
 
 
          
@@ -33,12 +23,26 @@ const personRegister = (req, res) => {
             person_bloodgroup : data.bloodGrp
             
         }
+        let q1 = 'insert into users set?';
         let q2 = "insert into person_details set ?"
         connection.query(q2, post,(error, results, fields) => {
             if(error){
                 return res.send({isRegistered : false, msg : "Database error"})
-            } 
+            }
+            connection.query(q1, {
+                username : data.email,
+                password : data.password,
+                type : "Person",
+                person_id : results.insertId
+            },(error, results, fields) => {
+                if(error){
+                    return res.send({isRegistered : false, msg : "User already present"})
+                }
+            })
         })
+
+ 
+        
 
         return res.send({isRegistered : true, msg : ""})
     }

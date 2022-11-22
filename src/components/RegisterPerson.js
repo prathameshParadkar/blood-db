@@ -42,7 +42,7 @@ const personRegister = (e) => {
   .then(res => {
     let data = res.data;
     if(data.isRegistered){
-      setRedirect("/person/home");
+      setRedirect("/person/donate");
       alert("Registered successfully")
     }
     else{
@@ -53,11 +53,10 @@ const personRegister = (e) => {
     console.log(e)
   })
 }
+
 if(redirect){
   return <Navigate to={{ pathname: `${redirect}` }} />
 }
-
-// console.log(date);
 
   return (
     <div>

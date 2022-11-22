@@ -6,4 +6,4 @@ const router = express.Router()
 
 router.post("/org-register", orgRegister)
 
-module.exports = router;
+module.exports = router; 

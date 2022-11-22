@@ -1,4 +1,7 @@
 const connection = require('../models/connection')
+const cookie = require("cookie")
+const cookieParser = require('cookie-parser')
+
 const login = (req, res) => {
     let users;
 
@@ -9,7 +12,7 @@ const login = (req, res) => {
         for (user of users){
             if(user.username == req.body.email){
                 if(user.password == req.body.password){
-                    return res.send({isLogin : true, msg : 'logged in'});
+                    return res.send({isLogin : true, msg : 'logged in', id : user.person_id});
                     
                 }
                 else{

@@ -4,11 +4,12 @@ import logo from "../logo.png";
 import axios from 'axios';
 import { Navigate } from "react-router";
 
-function Login() {
+function Login(props) {
     const [email, setEmail] = useState("your email");
     const [password, setPassword] = useState("Password");
     const [loginType, setLoginType] = useState("Organization");
     const [redirect, setRedirect] = useState('')
+    const [data, setData] = useState({})
 
     const login = (e) => {
       e.preventDefault();
@@ -22,7 +23,16 @@ function Login() {
         let data = res.data;
         if(data.isLogin){
           // alert(data.msg);
-          setRedirect("/home")
+          setData(res.data);
+          props.setUserId(res.data.id)
+          props.setUser(email)
+          if(loginType === "Person"){
+            // console.log(res.data)
+            setRedirect("/person/donate");
+          }
+          else{
+            setRedirect("/organization/create-a-camp");
+          }
         }
         else{
           alert(data.msg);
@@ -32,7 +42,13 @@ function Login() {
         console.log(e);
       })
     }
+    React.useEffect(() => {
+      localStorage.setItem("user", email);
+      localStorage.setItem("userId", data.id) 
+    }, [redirect])
+    
     if(redirect){
+      
       return <Navigate to={{ pathname: `${redirect}` }} />
     }
 

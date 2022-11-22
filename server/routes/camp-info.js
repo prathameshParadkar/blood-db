@@ -1,8 +1,8 @@
 const express = require('express')
 const {Router} = require('express')
-const personRegister = require('../controllers/person-register')
+const campInfo = require('../controllers/camp-info')
 const router = express.Router()
 
-router.post('/person-register', personRegister)
+router.get('/camp-info/:id', campInfo)
 
 module.exports = router;
