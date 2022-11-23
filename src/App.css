@@ -1743,3 +1743,293 @@ transition: 250ms;
   background-color: #FFFFFF;
   color: #FF6161;
 }
+
+.camp-info-name{
+  /* camp name */
+
+
+position: absolute;
+width: 1131px;
+height: 55px;
+left: 107px;
+top: 75px;
+
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 76px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+.camp-info-DL{
+  position: absolute;
+width: 241px;
+height: 55px;
+left: 67px;
+top: 161px;
+
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 45px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+}
+
+#camp-info-search{
+  box-sizing: border-box;
+
+position: absolute;
+width: 347px;
+height: 43px;
+left: 316px;
+top: 190px;
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 300;
+font-size: 30px;
+display: flex;
+align-items: center;
+color: #DE2C2C;
+background: #FFFFFF;
+border: 1px solid #DE2C2C;
+border-radius: 20px;
+}
+
+#camp-info-search::placeholder{
+  font-family: 'Prompt';
+font-style: normal;
+font-weight: 300;
+font-size: 30px;
+display: flex;
+align-items: center;
+
+color: #DE2C2C;
+}
+
+.cit-box{
+width: 707px;
+height: 68px;
+
+margin-top:20px;
+
+background: #FFFFFF;
+box-shadow: 2px 2px 8px rgba(222, 44, 44, 0.25);
+border-radius: 21px;
+}
+
+.cit-slot-no{
+  position: relative;
+width: 66px;
+height: 55px;
+bottom: 25px;
+left: 20px;
+
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 45px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+}
+
+.cit-name{
+  position: relative;
+width: 410px;
+height: 55px;
+left: 120px;
+bottom: 110px;
+
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 45px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+.cit-blood-grp{
+  position: relative;
+width: 154px;
+height: 55px;
+left: 563px;
+bottom: 195px;
+
+
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 45px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DE2C2C;
+
+}
+
+.cit-tick{
+  position: relative;
+  color: #36D759;
+width: 47.66px;
+height: 41px;
+left: 300px;
+bottom: 273px;
+font-size: 30px;
+font-weight: bolder;
+background-color: white;
+border: none;
+color: #36D759;
+cursor: pointer;
+}
+
+.cit-tick:hover{
+  color: #DE2C2C;
+}
+
+.person-tile-box{
+  display: flex;
+  flex-direction: column;
+  margin-top: 250px;
+  margin-left: 310px;
+}
+
+.cit-ap{
+  position: absolute;
+width: 199.72px;
+height: 85.52px;
+left: 1204.3px;
+top: 94.6px;
+
+background: #FFFFFF;
+box-shadow: 4px 4px 8px rgba(222, 44, 44, 0.25);
+border-radius: 14px;
+}
+
+.ap{
+  position: relative;
+  bottom: 10px;
+  right: 60px;
+  width: 100px;
+  height: 100px;
+}
+
+.stock-ap{
+  position: relative;
+  bottom: 115px;
+  left: 100px;
+width: 98.26px;
+height: 48px;
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 45px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DE2C2C;
+}
+
+.cit-an{
+  position: absolute;
+width: 199.72px;
+height: 86.39px;
+left: 1203.77px;
+top: 209.35px;
+
+background: #FFFFFF;
+box-shadow: 4px 4px 8px rgba(222, 44, 44, 0.25);
+border-radius: 14px;
+}
+
+.cit-bp{
+  position: absolute;
+width: 199.72px;
+height: 85.52px;
+left: 1203.77px;
+top: 327.16px;
+
+background: #FFFFFF;
+box-shadow: 4px 4px 8px rgba(222, 44, 44, 0.25);
+border-radius: 14px;
+}
+
+.cit-bn{
+  position: absolute;
+width: 199.72px;
+height: 86.39px;
+left: 1203.77px;
+top: 442.35px;
+
+background: #FFFFFF;
+box-shadow: 4px 4px 8px rgba(222, 44, 44, 0.25);
+border-radius: 14px;
+}
+
+.cit-abp{
+  position: absolute;
+width: 199.72px;
+height: 85.52px;
+left: 1203.77px;
+top: 559.29px;
+
+background: #FFFFFF;
+box-shadow: 4px 4px 8px rgba(222, 44, 44, 0.25);
+border-radius: 14px;
+}
+
+.cit-abn{
+  position: absolute;
+width: 199.72px;
+height: 86.39px;
+left: 1200.56px;
+top: 674.48px;
+
+background: #FFFFFF;
+box-shadow: 4px 4px 8px rgba(222, 44, 44, 0.25);
+border-radius: 14px;
+}
+
+.cit-op{
+  position: absolute;
+width: 199.72px;
+height: 85.52px;
+left: 1196.29px;
+top: 781.82px;
+
+background: #FFFFFF;
+box-shadow: 4px 4px 8px rgba(222, 44, 44, 0.25);
+border-radius: 14px;
+}
+
+.cit-on{
+  position: absolute;
+width: 199.72px;
+height: 86.39px;
+left: 1198.43px;
+top: 897.01px;
+
+background: #FFFFFF;
+box-shadow: 4px 4px 8px rgba(222, 44, 44, 0.25);
+border-radius: 14px;
+}

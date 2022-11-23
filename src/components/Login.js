@@ -31,7 +31,7 @@ function Login(props) {
             setRedirect("/person/donate");
           }
           else{
-            setRedirect("/organization/create-a-camp");
+            setRedirect("/organization/camps");
           }
         }
         else{

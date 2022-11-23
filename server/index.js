@@ -11,6 +11,7 @@ const campInfo = require('./routes/camp-info');
 const campReg = require('./routes/camp-reg');
 const bloodBanks = require('./routes/blood-banks');
 const camps = require('./routes/camps');
+const orgCamps = require('./routes/org-camps');
 
 
 const app = express()
@@ -22,6 +23,7 @@ app.use(cookieParser())
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
+app.use(orgCamps)
 app.use(camps)
 app.use(bloodBanks)
 app.use(campReg)

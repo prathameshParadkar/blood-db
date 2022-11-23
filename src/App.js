@@ -10,6 +10,7 @@ import CreateACamp from './components/CreateACamp';
 import Recieve from './components/Recieve';
 import CampData from './components/CampData';
 import Camps from './components/org-components/Camps';
+import CampInfo from './components/org-components/CampInfo';
 function App() {
   const [user, setUser] = React.useState("")
   const [userId, setUserId] = React.useState(0)
@@ -39,7 +40,10 @@ function App() {
             element = {<CampData id = {userId}/>} />
             <Route
             exact path ='/organization/camps'
-            element = {<Camps id = {userId}/>} />
+            element = {<Camps id = {userId} user = {user}/>} />
+            <Route
+            exact path ='/organization/camps/:id'
+            element = {<CampInfo id = {userId} user = {user}/>} />
 
         </Routes>
     </div>

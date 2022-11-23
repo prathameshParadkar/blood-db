@@ -45,7 +45,7 @@ function Register() {
     .then(res => {
       let data = res.data;
       if(data.isRegistered){
-        setRedirect("/organization/create-a-camp");
+        setRedirect("/organization/camps");
         alert("registered successfully");
       }
       else{
