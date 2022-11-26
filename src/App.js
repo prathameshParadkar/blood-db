@@ -17,6 +17,9 @@ function App() {
           <Route 
             exact path='/register/organisation'
             element={<RegisterOrg />} />
+          <Route
+            path='/home'
+            element={<Home />} />
         </Routes>
     </div>
   );
