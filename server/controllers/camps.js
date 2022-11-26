@@ -1,14 +1,16 @@
 const connection = require('../models/connection')
 
 const camps = (req, res) => {
-    let q = "insert into donation_camps set ?"
+    let q = "insert into donation_camps set ?;"
     let data = req.body;
     let q1 = "select organizer_id from organizers where organizer_administrator_id = ?";
     let post1 = data.userId;
+    let q2 = 'insert into camp_blood_collected (camp_id, camp_blood_type, camp_blood_quantity) values ?'
     connection.query(q1, post1, (error, results1, fields)=> {
         if(error){
             return res.send({isDone : false, msg : "no organization found" })
         }
+        
         let post = {
             camp_name : data.name,
             camp_status : "upcoming",
@@ -26,16 +28,36 @@ const camps = (req, res) => {
             description : data.description
         }
         connection.query(q, post, (error, results2, fields)=> {
-            if(error){
+            if(error){ 
                 console.log(error)
                 return res.send({isDone : false, msg : "cant insert" })
             }
-            return res.send({isDone : true, msg : "" })
+            let camp_id = results2.insertId;
+            let post2 = [
+                [camp_id,"A+", 0],
+                [camp_id,"A-", 0],
+                [camp_id,"B+", 0],
+                [camp_id,"B-", 0],
+                [camp_id,"AB+", 0],
+                [camp_id,"AB-", 0],
+                [camp_id,"O+", 0],
+                [camp_id,"O-", 0]
+                
+            ]
+
+            connection.query(q2, [post2], (error, results, fields) => {
+                if(error){
+                    console.log(error)
+                    return res.send({isRegistered : false, msg : "Database error"})
+                } 
+                
+                return res.send({isDone : true, msg : "" })
+            })
             
         })
         
     })
-
+    
     
     
 }

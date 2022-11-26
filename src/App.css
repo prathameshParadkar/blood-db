@@ -2033,3 +2033,30 @@ background: #FFFFFF;
 box-shadow: 4px 4px 8px rgba(222, 44, 44, 0.25);
 border-radius: 14px;
 }
+
+.end-event{
+  position: absolute;
+width: 217px;
+height: 42px;
+left: 431px;
+top: 105px;
+padding: auto;
+background: #FF6161;
+box-shadow: 4px 4px 4px rgba(222, 44, 44, 0.25);
+border-radius: 34px;
+
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 45px;
+align-items: center;
+border: none;
+color: #FFFFFF;
+transition: 250ms;
+}
+
+.end-event:hover{
+  color: #FF6161;
+  background-color: #FFFFFF;
+}
