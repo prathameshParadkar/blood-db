@@ -57,6 +57,15 @@ export default function CreateACamp(props) {
     })
     
   }
+
+  const validatePincode = (pincode) => {
+    if((/^[1-9][0-9]{5}$/).test(pincode)){
+      alert("valid pincode");
+    }else if(pincode.length > 6){
+      alert("Enter valid pincode");
+    }
+  }
+
   if(redirect){
     navigate(redirect)
   }
@@ -107,6 +116,7 @@ export default function CreateACamp(props) {
       Pincode
       <input onChange={e => {
         setPincode(e.target.value);
+        validatePincode(e.target.value);
       }} type="number" name="name" />
     </label>
     <label className='cac-city'>

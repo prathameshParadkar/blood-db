@@ -54,6 +54,24 @@ const personRegister = (e) => {
   })
 }
 
+const validatePincode = (pincode) => {
+  if((/^[1-9][0-9]{5}$/).test(pincode)){
+    alert("valid pincode");
+  }else if(pincode.length > 6){
+    alert("Enter valid pincode");
+  }
+}
+const validatePhone = (phone) => {
+  if(!((/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/).test(phone)) && phone.length > 10){
+    alert("enter valid phone number");
+  }
+}
+
+const validateEmail = (email) => {
+  if(!((/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/).test(email))){
+    alert("Enter valid email")
+  }
+}
 if(redirect){
   return <Navigate to={{ pathname: `${redirect}` }} />
 }
@@ -96,6 +114,7 @@ if(redirect){
             placeholder ={email}
             onChange={(e) => {
               setEmail(e.target.value);
+              validateEmail(e.target.value);
             }}
             required
         />
@@ -105,6 +124,7 @@ if(redirect){
             placeholder ={number}
             onChange={(e) => {
               setNumber(e.target.value);
+              validatePhone(e.target.value);
             }}
             required
         />
@@ -136,7 +156,8 @@ if(redirect){
             className="pincode"
             placeholder = {pincode}
             onChange = {function(e){
-              setPincode(e.target.value)
+              setPincode(e.target.value);
+              validatePincode(e.target.value);
             }}
             required
         />

@@ -2,8 +2,12 @@ import React from 'react'
 
 function TileElement() {
   return (
-    <div>
-        <h1>Camp Name</h1><h3>By XYZ Organisation</h3>
+    <div className='tile-element'>
+        <h1 className="tile-title">Title</h1>
+        <p className='tile-addr'>Address</p>
+        <h3 className='tile-stock'>Stock</h3>
+        {/* <label htmlFor="req">Request</label> */}
+        <input type="text" name="req" id="" className='req'/>
     </div>
   )
 }

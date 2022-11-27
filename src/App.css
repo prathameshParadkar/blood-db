@@ -550,7 +550,6 @@ button.reg:hover{
 }
 p.section {
   position: absolute;
-<<<<<<< HEAD
   width: 292px;
   height: 48px;
   left: 128px;
@@ -590,7 +589,7 @@ p.section {
   background: #FFFFFF;
   border: none;
   box-shadow: 2px 2px 6px rgba(222, 44, 44, 0.25);
-=======
+
 width: 292px;
 height: 48px;
 left: 128px;
@@ -2100,5 +2099,71 @@ transition: 250ms;
 .end-event:hover{
   color: #FF6161;
   background-color: #FFFFFF;
->>>>>>> d2c98cd0cf7bb4754ce60d46bdfde8f2cb6a0022
+}
+
+/* .tiles {
+  display: flex;
+  flex-direction: column;
+} */
+.tile-element {
+  position: relative;
+  width: 1283px;
+  height: 119px;
+  left: 78px;
+  top: 114px;
+  background: #FFFFFF;
+  box-shadow: 2px 2px 6px rgba(222, 44, 44, 0.25);
+}
+.tile-title {
+  position: relative;
+  width: 579px;
+  left: 108px;
+  top: 18px;
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.tile-addr {
+  position: relative;
+  width: 579px;
+  left: 108px;
+  top: 21px;
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  color: #8A8A8A;
+}
+.tile-stock {
+  position: relative;
+  width: 241px;
+  height: 55px;
+  left: 719px;
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+.req {
+  box-sizing: border-box;
+  position: relative;
+  width: 150px;
+  height: 41px;
+  left: 500px;
+  background: #FFFFFF;
+  border: 1px solid #DE2C2C;
+  border-radius: 12px;
 }

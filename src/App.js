@@ -26,12 +26,11 @@ function App() {
           <Route 
             exact path='/register/organisation'
             element={<RegisterOrg />} />
-<<<<<<< HEAD
+
           <Route
             path='/home'
             element={<Home />} />
-=======
-            <Route
+          <Route
             exact path ='/organization/create-a-camp'
             element = {<CreateACamp user = {user} userId = {userId}  />} />
             <Route
@@ -50,7 +49,6 @@ function App() {
             exact path ='/organization/camps/:id'
             element = {<CampInfo id = {userId} user = {user}/>} />
 
->>>>>>> d2c98cd0cf7bb4754ce60d46bdfde8f2cb6a0022
         </Routes>
     </div>
   );
