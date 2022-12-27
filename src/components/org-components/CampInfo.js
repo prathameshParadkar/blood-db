@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router';
+import { Navigate, useParams } from 'react-router';
 import Navbar from '../Navbar'
 import PersonTile from './PersonTile';
 import apos from '../images/Apos.png'
@@ -15,6 +15,7 @@ import axios from 'axios';
 export default function CampInfo(props) {
     const [data, setData] = React.useState([])
     const [data2, setData2] = React.useState([])
+    const [redirect, setRedirect] = React.useState('')
     const params = useParams()
     const id = params.id;
     const compare = (a, b) => {
@@ -31,14 +32,36 @@ export default function CampInfo(props) {
             camp_id : id,
         })
         .then((res) => {
+            
             setData(res.data.personData.sort(compare))
             setData2(res.data.bloodgrpData)
-           
         })
         .catch((e) =>{
             console.log(e)
         })
     }, [])
+
+    const endCamp = () => {
+        if(window.confirm("Are you sure you want to end this camp?")){
+            axios.post(`http://localhost:5000/end-camp/${id}`, {
+                data2
+            })
+            .then( res => {
+                console.log(res.data)
+                setRedirect("/organization/camps")
+            })
+            .catch( e => {
+                console.log(e)
+            })
+
+        }
+    }
+
+    if(redirect){
+      
+        return <Navigate to={{ pathname: `${redirect}` }} />
+      }
+
   return (
     <>
     <Navbar
@@ -54,7 +77,9 @@ export default function CampInfo(props) {
     <p className='camp-info-DL'>Donors list</p>
 
     <input type="text" id='camp-info-search' placeholder='search'/>
-       <button className='end-event'>End event</button>
+    
+    <button className='end-event' onClick={endCamp}>End event</button>
+   
     <div className='person-tile-box'>
     {data.length > 0 && data.map((item) => {
           return (

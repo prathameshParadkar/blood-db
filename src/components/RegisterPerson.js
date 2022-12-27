@@ -69,7 +69,7 @@ const validatePhone = (phone) => {
 
 const validateEmail = (email) => {
   if(!((/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/).test(email))){
-    alert("Enter valid email")
+    alert("Enter valid email");
   }
 }
 if(redirect){

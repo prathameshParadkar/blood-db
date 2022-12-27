@@ -5,14 +5,13 @@ const cookieParser = require('cookie-parser')
 const login = (req, res) => {
     let users;
 
-    var q = `select * from users where type = ?`;
+    var q = `select person_id, person_bloodgroup, password, username from users natural join person_details where type = ?`;
     connection.query(q,[req.body.loginType] , function (error, results, fields) {
         users = results;
-        
         for (user of users){
             if(user.username == req.body.email){
                 if(user.password == req.body.password){
-                    return res.send({isLogin : true, msg : 'logged in', id : user.person_id});
+                    return res.send({isLogin : true, msg : 'logged in', id : user.person_id, bloodgroup : user.person_bloodgroup});
                     
                 }
                 else{

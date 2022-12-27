@@ -6,7 +6,7 @@
 .pnp.js
 
 ./server/models/connection.js
-
+.env
 # testing
 /coverage
 

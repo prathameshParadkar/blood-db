@@ -45,6 +45,7 @@ function Login(props) {
     React.useEffect(() => {
       localStorage.setItem("user", email);
       localStorage.setItem("userId", data.id) 
+      localStorage.setItem("bloodgroup", data.bloodgroup) 
     }, [redirect])
     
     if(redirect){

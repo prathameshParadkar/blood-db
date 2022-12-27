@@ -2101,24 +2101,27 @@ transition: 250ms;
   background-color: #FFFFFF;
 }
 
-/* .tiles {
+.receive-tiles {
   display: flex;
   flex-direction: column;
-} */
-.tile-element {
+  margin-top: 20px;
+  padding: 0;
+}
+.receive-element {
   position: relative;
+  margin-top: 0px;
   width: 1283px;
   height: 119px;
-  left: 78px;
-  top: 114px;
+  left: 120px;
+  margin-top: 20px;
   background: #FFFFFF;
   box-shadow: 2px 2px 6px rgba(222, 44, 44, 0.25);
 }
-.tile-title {
+.receive-title {
   position: relative;
   width: 579px;
-  left: 108px;
-  top: 18px;
+  left: 50px;
+  
   font-family: 'Prompt';
   font-style: normal;
   font-weight: 600;
@@ -2128,11 +2131,11 @@ transition: 250ms;
   align-items: center;
   color: #000000;
 }
-.tile-addr {
+.receive-addr {
   position: relative;
-  width: 579px;
-  left: 108px;
-  top: 21px;
+  width: 800px;
+  left: 50px;
+  bottom: 10px;
   font-family: 'Prompt';
   font-style: normal;
   font-weight: 300;
@@ -2142,11 +2145,12 @@ transition: 250ms;
   align-items: center;
   color: #8A8A8A;
 }
-.tile-stock {
+.receive-stock {
   position: relative;
   width: 241px;
   height: 55px;
-  left: 719px;
+  left: 780px;
+  bottom: 130px;
   font-family: 'Prompt';
   font-style: normal;
   font-weight: 600;
@@ -2157,13 +2161,72 @@ transition: 250ms;
   text-align: center;
   color: #000000;
 }
-.req {
-  box-sizing: border-box;
+.receive-stock-actual {
   position: relative;
-  width: 150px;
-  height: 41px;
-  left: 500px;
-  background: #FFFFFF;
-  border: 1px solid #DE2C2C;
-  border-radius: 12px;
+  width: 100px;
+  height: 55px;
+  left: 800px;
+  bottom: 170px;
+  font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+.receive-request {
+  position: relative;
+width: 241px;
+height: 55px;
+left: 1111px;
+bottom: 310px;
+font-family: 'Prompt';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 45px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+
+.receive-request-actual{
+  padding-left: 5px;
+box-sizing: border-box;
+position: relative;
+width: 90px;
+height: 41px;
+left: 535px;
+bottom: 345px;
+font-family: 'Prompt';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+background: #FFFFFF;
+border: 1px solid #DE2C2C;
+border-radius: 12px;
+}
+
+.receive-tick{
+  position: relative;
+  color: #36D759;
+width: 47.66px;
+height: 41px;
+left: 535px;
+bottom: 345px;
+font-size: 30px;
+font-weight: bolder;
+background-color: white;
+border: none;
+color: #36D759;
+cursor: pointer;
+}
+
+.receive-tick:hover{
+  color: #DE2C2C;
 }
