@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Blood-DB: Blood Donation Management Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Blood-DB is a web-based application that serves as a Blood Donation Management Portal. It allows individuals and organizations to participate in the blood donation process efficiently. The portal provides two types of logins: Person and Organization. Individuals can donate blood or send/receive blood requests, while organizations can host donation camps, manage donor data, and track the amount of blood collected during each camp.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Person Login
 
-### `npm start`
+1. **Donate Blood:** Individuals can register themselves as blood donors and provide their blood type, contact information, and availability for donation. They can update their details and availability as needed.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Screenshot 2023-07-14 153852](https://github.com/prathameshParadkar/blood-db/assets/108287510/f5066430-1da7-409c-9c70-7ffe143d67a1)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Book a slot in the selected camp
 
-### `npm test`
+![Screenshot 2023-07-14 154006](https://github.com/prathameshParadkar/blood-db/assets/108287510/26d606d7-d586-4fed-9275-35e6050495ac)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+2. **Send/Receive Blood Requests:** Individuals can create blood requests when they require a specific blood type. They can provide details about the urgency, required blood type, and contact information.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Screenshot 2023-07-14 153908](https://github.com/prathameshParadkar/blood-db/assets/108287510/7019f7b6-6c04-4a9c-93f6-d5a49846a99d)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Organization Login
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Host Donation Camps:** Organizations can create and manage blood donation camps. They can specify the date, time, and location of the camp, and provide additional details such as the required blood types. They can also track the number of donors who attended the camp.
+   
+![Screenshot 2023-07-14 154507](https://github.com/prathameshParadkar/blood-db/assets/108287510/c67ea3e0-953e-43df-baa0-ddaf7f7f0203)
 
-### `npm run eject`
+2. **Track Collected Blood:** Organizations can track the amount of blood collected during each donation camp. They can record the total units of blood collected and specify the blood types. This feature helps organizations manage the distribution of blood to various medical facilities.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Screenshot 2023-07-14 154500](https://github.com/prathameshParadkar/blood-db/assets/108287510/5a9a6145-d784-4b2e-b274-432b75c16905)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Track Multiple Camps:** Organizations can host multiple donation camps through multiple POCs and can manage them simultaneously.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Screenshot 2023-07-14 154514](https://github.com/prathameshParadkar/blood-db/assets/108287510/321c6b4f-2a87-45a6-b4b7-90f2125c8ce5)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Technologies Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Frontend: React.js, CSS, Javascript
+- Backend: Node.js, Express.js
+- Database: MySQL
